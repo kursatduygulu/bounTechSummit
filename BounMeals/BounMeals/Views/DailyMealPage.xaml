@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:BounMeals" 
+	x:Class="BounMeals.DailyMealPage"
+	Title="Günün Yemekleri">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0, 0, 0"
+                    WinPhone="0, 0, 0, 0" />
+     </ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout x:Name="MainLayout"
+					 Orientation="Vertical"
+					 VerticalOptions="CenterAndExpand">
+			<Label x:Name="HeaderLabel"
+				FontSize="18"
+				TextColor="Blue" 
+				HorizontalTextAlignment="Center"
+				Margin="10"/>
+			<ActivityIndicator  
+				x:Name="ProgressBar" 
+				Color="#0093d0" 
+				VerticalOptions="Center" />
+			<ListView x:Name="MealList"
+				HeightRequest="250"
+				SeparatorVisibility="None"
+				ItemTapped="ShowMealOptions">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding ., Mode=TwoWay}" 
+								  TextColor="Black" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

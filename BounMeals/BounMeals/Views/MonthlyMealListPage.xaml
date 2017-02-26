@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="BounMeals.MonthlyMealListPage"
+	Title="Aylık Yemek Listesi">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0, 0, 0"
+                    WinPhone="0, 0, 0, 0" />
+     </ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout x:Name="MainLayout"
+					 Orientation="Vertical"
+					 VerticalOptions="FillAndExpand"
+					 Padding="0">
+			<ActivityIndicator  
+				x:Name="ProgressBar" 
+				Color="#0093d0" />
+			<ListView x:Name="MonthlyList"
+				   	  ItemTapped="SelectMeal"
+				      SeparatorVisibility="Default"
+					  Margin="0">
+			   	<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding MealDate, StringFormat='{0:dd/MM/yyyy}'}"
+								  Detail="{Binding LunchJoined}"
+								  TextColor="Black"
+								  DetailColor="Gray"/>
+					</DataTemplate>
+				</ListView.ItemTemplate>				
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
