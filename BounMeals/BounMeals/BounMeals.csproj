@@ -42,7 +42,7 @@
     <Compile Include="Api\MealsApi.cs" />
     <Compile Include="ViewModels\MealsViewModel.cs" />
     <Compile Include="ViewModels\DailyMealViewModel.cs" />
-    <Compile Include="Views\DailyMealPage.cs">
+    <Compile Include="Views\DailyMealPage.xaml.cs">
       <DependentUpon>DailyMealPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MonthlyMealListPage.xaml.cs">
